@@ -564,7 +564,7 @@
         }
     };
 
-    zForm.addEvent(window, "load", (function(_this) {
+    zForm.addEvent(window, ["load", "DOMSubtreeModified"], (function(_this) {
         return function() {
             _this.init();
         };

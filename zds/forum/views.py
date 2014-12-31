@@ -741,12 +741,22 @@ def edit_post(request):
 
         form.helper.form_action = reverse("zds.forum.views.edit_post") \
             + "?message=" + str(post_pk)
-        return render(request, "forum/post/edit.html", {
+
+        if request.is_ajax() and not g_topic:
+            content = render(request, 'misc/message_form.html', {
+            "post": post,
+            "topic": post.topic,
+            "text": post.text,
+            "member": request.user,
+            })
+            return StreamingHttpResponse(content)
+        else:
+            return render(request, "forum/post/edit.html", {
             "post": post,
             "topic": post.topic,
             "text": post.text,
             "form": form,
-        })
+            })
 
 
 @can_write_and_read_now

@@ -129,6 +129,31 @@
         e.stopPropagation();
         e.preventDefault();
     });
+    $(".message-actions").on("click", ".edit", function(e){
+        var $act = $(this),
+            $message = $(this).parents(".topic-message:first"),
+            $previousMessage = $message.prev(),
+            $newMessageEditor = $(".md-editor").parents("section.topic-message:first");
+
+        // don't make the AJAX request if this is the first message
+        if($(".content-wrapper .topic-message:first").get(0) !== $message.get(0)){
+            $.ajax({
+                url: $act.attr("href"),
+                success: function(data){
+                    $newMessageEditor.remove();
+                    $message.remove();
+                    $(data).insertAfter($previousMessage);
+                }
+            });
+
+            // the user can edit only one message at the time
+            $(".message-actions").off("click", ".edit");
+
+            e.stopPropagation();
+            e.preventDefault();
+        }
+    });
+
     $(".message-bottom").on("click", ".btn-grey", function(e){
         var $form = $(this).parents("form:first");
         var csrfmiddlewaretoken = $form.find("input[name=csrfmiddlewaretoken]").val(),
