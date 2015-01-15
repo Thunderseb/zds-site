@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load captureas %}
+
+{% captureas code_example %}
+**{% trans "gras" %}** 
+*{% trans "italique" %}* 
+[{% trans "texte de lien" %}]({% trans "url du lien" %}) 
+> {% trans "citation" %} 
++ {% trans "liste à puces" %} 
+{% endcaptureas %}
+
+<div class="markdown-help">
+    <div class="markdown-help-more">
+        <p>
+            {% trans "Les simples retours à la ligne ne sont pas pris en compte. Pour créer un nouveau paragraphe, pensez à <em>sauter une ligne</em> !" %}
+        </p>
+        <pre><code>{{ code_example }}</code></pre>
+        <a href="//zestedesavoir.com/tutoriels/221/rediger-sur-zds/">{% trans "Voir la documentation complète" %}</a>
+    </div>
+    <button class="open-markdown-help btn btn-grey ico-after help" data-content-on-click="{% trans "Masquer l'aide Markdown" %}">
+        {% trans "Afficher l'aide Markdown" %}
+    </button>
+</div>

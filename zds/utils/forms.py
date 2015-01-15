@@ -3,6 +3,7 @@
 from crispy_forms.bootstrap import StrictButton
 from crispy_forms.layout import Layout, ButtonHolder, Field, Div, HTML
 from django.utils.translation import ugettext_lazy as _
+from django.template.loader import render_to_string
 
 
 class CommonLayoutEditor(Layout):
@@ -12,6 +13,7 @@ class CommonLayoutEditor(Layout):
             CommonLayoutEditor,
             self).__init__(
                 Field('text', css_class='md-editor'),
+                HelpMarkdown(),
                 HTML("<div class='message-bottom'>"),
                 HTML("<div class='message-submit'>"),
                 StrictButton(
@@ -58,3 +60,8 @@ class CommonLayoutModalText(Layout):
         super(CommonLayoutModalText, self).__init__(
             Field('text'),
         )
+
+class HelpMarkdown(object):
+
+    def render(self, form, form_style, context):
+        return render_to_string("forms/markdown_help.html")
