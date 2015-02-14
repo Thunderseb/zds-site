@@ -112,7 +112,7 @@
                 padding-left: 25px;
                 padding-right: 10px;
                 text-decoration: none;
-                color: #0079b2;
+                color: #0079B2;
                 overflow: hidden;
                 height: 30px;
                 line-height: 30px;
@@ -231,7 +231,7 @@
                 height: 40px;
                 background: #FFF;
                 padding: 7px 10px;
-                border: 1px solid #F0F0F0;
+                border: 1px solid $color-sidebar-background;
                 box-shadow: rgba(0, 0, 0, .1) 2px 2px 2px;
                 opacity: 0;
                 transition: visibility 0s linear $transition-duration, opacity $transition-duration, left $transition-duration;
@@ -240,7 +240,7 @@
                     height: 40px;
                     width: 40px;
                     float: left;
-                    border: 1px solid #F0F0F0;
+                    border: 1px solid $color-sidebar-background;
                 }
 
                 .topic-last-answer {
@@ -302,7 +302,7 @@
 
     &.summary {
         h4 {
-            border-bottom: 1px solid #d8dada;
+            border-bottom: 1px solid #D8DADA;
             padding-bottom: 5px;
             padding-right: 15px;
             overflow: hidden;
@@ -329,7 +329,7 @@
                 padding-bottom: 5px;
                 margin-left: -42px;
                 width: calc(105% + 25px);
-                background: linear-gradient(top, rgba(0, 0, 0, .07), #F7F7F7 3px);
+                background: linear-gradient(top, rgba(0, 0, 0, .07), $color-body-background 3px);
 
                 a {
                     padding-left: 50px;

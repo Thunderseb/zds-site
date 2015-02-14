@@ -7,10 +7,10 @@
 .home-quote {
     width: 100%;
     min-height: 24px;
-    background: #e9e7e4; // @TODO: Color
+    background: #E9E7E4; // @TODO: Color
 
     blockquote {
-        color: #0b668e; // @TODO: Color
+        color: #0B668E; // @TODO: Color
         font-style: italic;
         margin: 0;
         width: 100%;
@@ -54,12 +54,12 @@
                 line-height: 3.8rem;
                 color: $color-primary;
                 font-weight: normal;
-                border-bottom: 1px solid #F8AD32;
+                border-bottom: 1px solid $color-secondary;
                 margin-top: 0;
             }
 
             blockquote {
-                color: #0b668e;
+                color: #0B668E;
                 font-style: italic;
                 font-size: 18px;
                 font-size: 1.8rem;

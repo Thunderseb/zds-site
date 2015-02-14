@@ -98,7 +98,7 @@
             line-height: 50px;
             margin-bottom: 20px;
             background:  #FFF;
-            border-top: 1px solid #e0e4e5;
+            border-top: 1px solid #E0E4E5;
             padding-left: 1%;
             font-weight: 400;
         }
@@ -163,28 +163,28 @@
                 }
             }
             &.information {
-                background: #daeaee;
+                background: #DAEAEE;
 
                 &.ico-after:after {
                     @include sprite-position($information);
                 }
             }
             &.question {
-                background: #e2daee;
+                background: #E2DAEE;
 
                 &.ico-after:after {
                     @include sprite-position($question);
                 }
             }
             &.error {
-                background: #eedada;
+                background: #EEDADA;
 
                 &.ico-after:after {
                     @include sprite-position($error);
                 }
             }
             &.warning {
-                background: #eee7da;
+                background: #EEE7DA;
 
                 &.ico-after:after {
                     @include sprite-position($warning);

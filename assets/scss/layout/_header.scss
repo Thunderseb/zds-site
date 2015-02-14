@@ -114,7 +114,7 @@
                 padding: 0 5px;
                 height: 16px;
                 line-height: 14px;
-                background: #c0392b; //@TODO: Color
+                background: $color-danger; //@TODO: Color
                 border-radius: 16px;
             }
             .notif-text {
@@ -158,7 +158,7 @@
             height: 35px;
             line-height: 37px;
             text-align: center;
-            border-bottom: 1px solid #274a5a; // @TODO: Color
+            border-bottom: 1px solid #274A5A; // @TODO: Color
             background-color: $color-header-hover;
         }
 
@@ -167,7 +167,7 @@
             margin: 0;
             padding: 0;
             list-style: none;
-            background-color: #19526c; // @TODO: Color
+            background-color: #19526C; // @TODO: Color
 
             li {
                 display: block;
@@ -217,7 +217,7 @@
                     white-space: nowrap;
                 }
                 .date {
-                    color: #5196b6; // @TODO: Color
+                    color: #5196B6; // @TODO: Color
                     float: right;
                     padding: 4px 10px 0 0;
                     transition-property: color;

@@ -70,7 +70,7 @@
                 border: 1px solid #D2D5D6;
                 border-top: 0;
                 text-align: center;
-                background-color: #edefef;
+                background-color: #EDEFEF;
                 text-decoration: none;
                 color: #424242;
                 height: 25px;
@@ -92,10 +92,10 @@
                 }
 
                 &.positive {
-                    color: #48a200;
+                    color: $color-success;
                 }
                 &.negative {
-                    color: #c0392b;
+                    color: $color-danger;
                 }
             }
         }
@@ -235,7 +235,7 @@
                 margin-top: 1px;
             }
             .message-helpful {
-                color: #48A200;
+                color: $color-success;
                 text-indent: 20px;
             }
 
@@ -327,7 +327,7 @@
                         border-bottom-color: $color-success;
                     }
                     &.active:not(.disabled) {
-                        color: #48a200;
+                        color: $color-success;
 
                         &:after {
                             opacity: 1;

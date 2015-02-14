@@ -47,14 +47,14 @@
 
     &.info, // TEMP PATCH WITH DJANGO ALERTS
     &.success {
-        background: #48A200;
+        background: $color-success;
     }
     &.error {
-        background: #C0392B;
+        background: $color-danger;
     }
     &.alert, // TEMP PATCH WITH DJANGO ALERTS
     &.warning {
-        background: #e67e22;
+        background: #E67E22;
     }
     &.not-member {
         background: #FDFDFD;
