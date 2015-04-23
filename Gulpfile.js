@@ -2,7 +2,8 @@ var gulp = require("gulp"),
     $ = require("gulp-load-plugins")(),
     sprite = require("css-sprite").stream,
     path = require("path"),
-    del = require("del");
+    del = require("del"),
+    lazypipe = require('lazypipe');
 
 var sourceDir = "assets",
     destDir = "dist",
@@ -154,13 +155,28 @@ gulp.task("scripts", function() {
 });
 
 /**
- * Check JS code style and syntax using JSHint
+ * Check JS code style and syntax using ESLint
  */
-gulp.task("jshint", function() {
-  return gulp.src([path.join(sourceDir, scriptsDir, "*.js"), "!" + path.join(sourceDir, scriptsDir, "_custom.modernizr.js")])
-    .pipe($.jshint())
-    .pipe($.jshint.reporter("jshint-stylish"));
+eslintPipe = lazypipe()
+    .pipe(gulp.src, [path.join(sourceDir, scriptsDir, "*.js"), "!" + path.join(sourceDir, scriptsDir, "_custom.modernizr.js")])
+    .pipe($.eslint)
+    .pipe($.eslint.format);
+
+/**
+ * Test without failing after an error
+ */
+gulp.task("testWithoutFailing", function() {
+    return eslintPipe();
 });
+
+/**
+ * Test with failing after error
+ */
+gulp.task("testWithFailing", function() {
+    return eslintPipe()
+        .pipe(eslint.failAfterError());
+});
+
 
 /**
  * Merge vendors and app scripts
@@ -183,7 +199,7 @@ gulp.task("merge-scripts", ["vendors", "scripts"], function() {
  * Watch for files changes, then recompiles and livereloads
  */
 gulp.task("watch", function() {
-  gulp.watch(path.join(sourceDir, scriptsDir, "*.js"), ["jshint", "scripts"]);
+  gulp.watch(path.join(sourceDir, scriptsDir, "*.js"), ["testWithoutFailing", "scripts"]);
   gulp.watch([path.join(sourceDir, imagesDir, "*.png"), path.join(sourceDir, "smileys/*")], ["images"]);
   gulp.watch([path.join(sourceDir, sassDir, "**/*.scss"), "!" + path.join(sourceDir, sassDir, "_sprite.scss")], ["stylesheet"]);
 
@@ -198,7 +214,7 @@ gulp.task("watch", function() {
 /**
  * Tests
  */
-gulp.task("test", ["jshint"]);
+gulp.task("test", ["testWithFailing"]);
 
 /**
  * CI builds
