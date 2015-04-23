@@ -9,8 +9,9 @@
 
     function accordeon($elem){
         $("h4 + ul, h4 + ol", $elem).each(function(){
-            if($(".current", $(this)).length === 0)
+            if($(".current", $(this)).length === 0) {
                 $(this).hide();
+            }
         });
 
         $("h4", $elem).click(function(e){
@@ -20,7 +21,7 @@
             e.stopPropagation();
         });
     }
-    
+
     $(document).ready(function(){
         $(".main .sidebar.accordeon, .main .sidebar .accordeon")
         .each(function(){

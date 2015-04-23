@@ -74,8 +74,9 @@
 
             var input = this.$input.val();
 
-            if (this._lastInput === input)
+            if (this._lastInput === input) {
                 return;
+            }
 
             this._lastInput = input;
 
@@ -97,7 +98,7 @@
                 this.showDropdown();
             }
         },
- 
+
         handleSubmit: function() {
             var content = this.$input.val();
             if(content.slice(-2) === ", ") {
@@ -106,8 +107,9 @@
         },
 
         showDropdown: function() {
-            if (this.$input.is("input"))
+            if (this.$input.is("input")) {
                 this.$dropdown.css("width", this.$input.outerWidth());
+            }
             this.$dropdown.show();
         },
 
@@ -125,12 +127,14 @@
             selected = selected || this.selected;
             var input = this.$input.val();
             var lastChar = input.substr(-1);
-            if ((lastChar === "," || selected === -1) && this.options.type === "multiple")
+            if ((lastChar === "," || selected === -1) && this.options.type === "multiple") {
                 return false;
+            }
 
             var completion = this.getFromCache(selected);
-            if (!completion)
+            if (!completion) {
                 return false;
+            }
 
             if (this.options.type === "multiple") {
                 var lastComma = input.lastIndexOf(",");
@@ -168,11 +172,15 @@
 
         parseInput: function(input) {
             if (this.options.type === "multiple") {
-                if (input.substr(-1) === "," || input.substr(-2) === ", ")
+                if (input.substr(-1) === "," || input.substr(-2) === ", ") {
                     return false;
+                }
 
                 var words = this.extractWords(input);
-                if (words.length === 0) return false;
+
+                if (words.length === 0) {
+                    return false;
+                }
 
                 return words[words.length - 1]; // last word in list
             } else {
@@ -192,8 +200,9 @@
 
         getFromCache: function(id) {
             for (var i in this.cache) {
-                if (parseInt(this.cache[i].pk) === parseInt(id))
+                if (parseInt(this.cache[i].pk) === parseInt(id)) {
                     return this.cache[i];
+                }
             }
             return false;
         },
@@ -216,13 +225,16 @@
 
             list = self.filterData(list, self.extractWords(this.$input.val()));
 
-            if (list.length > this.options.limit) list = list.slice(0, this.options.limit);
+            if (list.length > this.options.limit) {
+                list = list.slice(0, this.options.limit);
+            }
 
             var $list = $("<ul>"),
                 $el, selected = false;
             for (var i in list) {
-                if ($("#my-account .username").text() === list[i].username)
+                if ($("#my-account .username").text() === list[i].username) {
                     continue;
+                }
                 $el = $("<li>").text(list[i].username);
                 $el.attr("data-autocomplete-id", list[i].pk);
                 if (list[i].pk === this.selected) {
@@ -236,8 +248,9 @@
             this.$dropdown.children().remove();
             this.$dropdown.append($list);
 
-            if (!selected)
+            if (!selected) {
                 this.select($list.find("li").first().attr("data-autocomplete-id"));
+            }
         },
 
         sortList: function(list, search) {
@@ -255,10 +268,13 @@
             var sortFn = function(a, b) {
                 var valueA = a.username.toLowerCase(),
                     valueB = b.username.toLowerCase();
-                if (valueA < valueB)
+
+                if (valueA < valueB) {
                     return -1;
-                if (valueA > valueB)
+                }
+                if (valueA > valueB) {
                     return 1;
+                }
                 return 0;
             };
 
@@ -307,8 +323,9 @@
         $("[data-autocomplete]").autocomplete();
         $("#content").on("DOMNodeInserted", "input", function(e) {
             var $input = $(e.target);
-            if ($input.is("[data-autocomplete]"))
+            if ($input.is("[data-autocomplete]")) {
                 $input.autocomplete();
+            }
         });
     });
 })(jQuery);
