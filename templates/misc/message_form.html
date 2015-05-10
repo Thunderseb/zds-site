@@ -1,5 +1,6 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
+{% load set %}
 
 
 {% if topic.is_locked %}
@@ -27,6 +28,20 @@
         {% trans "Vous êtes seul dans cette conversation" %}.
     </div>
 {% else %}
+    {% if paginator and page_obj.has_next %}
+        {% set False as last_page %}
+    {% elif pages and pages|last > 0 and pages|last != nb %}
+        {% set False as last_page %}
+    {% else %}
+        {% set True as last_page %}
+    {% endif %}
+
+    {% if not last_page %}
+        <div class="alert-box warning">
+            {% trans "Vous n'êtes pas sur la dernière page ! Avez-vous lu le reste des pages ?" %}
+        </div>
+    {% endif %}
+
     <section class="topic-message">
         <form action="{{ form_action }}" method="post">
             {% include "misc/message_user.html" with hide_metadata=True %}
