@@ -33,7 +33,8 @@
                 height: 36px;
                 line-height: 36px;
                 padding: 0 8px;
-                transition: all $transition-duration ease;
+                transition-property: background, color;
+                transition-duration: $transition-duration;
 
                 &.ico-after {
                     padding-left: 30px;

@@ -77,7 +77,8 @@
                 line-height: 26px;
                 width: 28px;
                 color: #777;
-                transition: all $transition-duration ease;
+                transition-property: border, background;
+                transition-duration: $transition-duration;
 
                 &:first-child {
                     border-right: 0;
@@ -153,7 +154,8 @@
                 line-height: 30px;
                 padding: 0 5px;
                 border-bottom: 1px solid #D2D5D6;
-                transition: all $transition-duration ease;
+                transition-property: border, color, outline;
+                transition-duration: $transition-duration;
 
                 &:hover,
                 &:focus {
@@ -268,7 +270,8 @@
 
                 a {
                     color: #999;
-                    transition: all $transition-duration ease;
+                    transition-property: text-decoration, color;
+                    transition-duration: $transition-duration;
 
                     &:hover,
                     &:focus {

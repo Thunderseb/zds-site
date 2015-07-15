@@ -15,7 +15,8 @@
             background: $color-header-hover;
             color: #FFF;
             margin-left: 1px;
-            transition: all $transition-duration ease;
+            transition-property: background, color, border-bottom;
+            transition-duration: $transition-duration;
 
             &:hover,
             &:focus {
