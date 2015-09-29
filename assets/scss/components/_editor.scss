@@ -34,7 +34,14 @@
             left: 12px;
             // TODO : remake icons
             display: none;
-        }        
+        }
+
+        &:hover,
+        &:focus {
+            border-bottom-color: lighten($color-primary, 20%);
+            outline: none;
+            background-color: #EEE;
+        }
     }
     button {
         padding: 0 15px;
@@ -42,7 +49,7 @@
         border-top: none;
         border-right: none;
         border-left: none;
-        
+
         &[type=submit] {
             background: #084561;
             border-bottom-color: #084561;
@@ -54,15 +61,6 @@
                 background: #396A81;
                 border-bottom-color: #396A81;
             }
-        }
-    }
-    a,
-    button {
-        &:hover,
-        &:focus {
-            border-bottom-color: lighten($color-primary, 20%);
-            outline: none;
-            background-color: #EEE;
         }
     }
 }
@@ -102,14 +100,15 @@
 .zform-button-table { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAByElEQVR42q2TzytEURTHv/Pe85sFGVPIRpHflKYRC8rCilCKspKlvZVY8H/IQhQldiyEyUSKUhKxUH7MTH7LNO/+cO6b8d4bWRCn3jvv3nfO53zvufcCfzSPes1tPUxIiVEuRakQAlwATHmuviUYeefh4EzSvNifGa7wGwogpBzr9+cV/qby5MJ5vfIWgGhW8srFLFVmVIXBJG9y0/E09/lvvGUapskzXABpUYeqR35U/S1GUMbhANSiyeZ3wj8CdDcXIO4GsCRA2WBbERaDdxho9dlzS6E79AeccfQ5lqrAJAA1EoZOwbth6LqG5VAYHg3Qkkkre6SOYtIoo6okG3HzyxJUFwzdg16/l4Ij6PEXpShwj8+vn8GYSFUgaWxQubWDCClIeCtAcyAGnRqVVl2cSQXdAKJJJY8Su5q82DiKorPBORbrhxEEKvORl2WF4/TqCTkZhquJIkHTNY+VrOzT0xSdBWD75MEGlnvT7Z1LABhL9IDkdtQVYvM4ivZaR8FyKIK+gNceKwV6cmlOD2gJtWW5uLl/R7kvC5e3r/ZdqClJt5LcJoQUrl2Qwan5s8Y4Fzlqf9XDqS+mdXnYt4fp8SW2iv+wD9RSCSl9jwFVAAAAAElFTkSuQmCC"); }
 .zform-button-math { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAs0lEQVQoz2P4z4AfMhCpoNGh8X/d/+oz5UeLz+T/yPqfchTDhLrz+/6XnSnqye3JmJzcEzsfQ0GlQff/Cf9zHCC8sP1Y3FBQP/9/2v0EATyOTDk/+39kAR4FsQkR74Nm4VQQIxB2P/A2nnAIXe9/xrMHwjb5j6EgOMHvvMdpEMsC6Ez992gKggx83ru/cay3qTfvN7qv918L3ZveCa77HfZb7Tfdb7hfd7/mfrV+UuOCAgUAOHoB5MLjQikAAAAASUVORK5CYII="); }
 .zform-button-footnote { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABlUlEQVR42qWTx05CURCGeQCfwBIX+gY+i23v3qCIEevCaMB7uY0LF9SoxF5iiSshlmCjG2kixRghajQRrjuJ+T3XFRukOMkkM2dyvjP/nIxKVWSL9uWC6j82v7AE+/IqZucXGmoCSLY55PIy1je3YbHOdVUNEMwSvgoFyJ+f2NrZhVmyrVUF4AQzZFnGbShMIDIczmMIoiVTMYDhRby9vePiyg1fIIjnl1dcu71geRNEi7X8XBhOQCabhc8f+PVA8Abph0eEozEFQLqR/p4LzXBIpdMIEQmKjFA4gmgsRs4ecBdPYNG+At5k2S0JoIwcuRDHfSIJt8eDRDIFhhNhoBjQjECkiAoAJQEGmkU4EsPpmQtGRc5T9neQfRqtRMptRV4CQF5ye/2gWeF7QDu04Tq/xBOBUEY2X9EvzNAMTGYr2js6e0jaxJNvzX3kcORwYlpPdZcFGCgWupHxPRLWKXmvut/q8fiQz+UxOaVHJU0o+pqL8npelLB/cAjd6MRJTfuh1gyu6IbHXCRsqXVJG4m3lir+AKcgCFAzJG3uAAAAAElFTkSuQmCC"); }
-
+.zform-button-chars { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpklEQVR42mNgGHQgcupjhfS5z+a3bHh1v3rVy/OVK1+er1396n7U1Mfz/TseKuDXPOWxQc+21++7trx+HzLhkQNMHKjRoWHdq/f1q1++92q8Z4BVc/iURwI9QI3T97z7H9KH0AwDXs33HIAG/y9f/vy9S/UdAQwDQic8Kpi9//3/0mUvz+NyYdLMx+c7N7/671B6qwBDMm/R8/2z9r37D3RuPS4DHMtv1bdtfPU/qOvBfgzJrPnP9k/f++6/T8s9nAbYFt2qb17/CmgJFgNCJzycP33P2/9hEx+tx2WAV8Pd9S3rX4K8MB9D0rPhnkP7ptf/S5Y9f48nDN4XLXn23yjlqgNWBb6t9+a3bnj5377kVgK6nEn6tYTSpc//2xbcnI9Vc9jEh/uBGg08Gu7Nz5j39L1lzg14VBmnXBOInvrovXX+jfl68VcMXKtvYYZB6bLn/60LbtZb5t1wCO59cD6w5wE8Ov3a7p0HBu553bhLDtqxl+rjpz3+j2FA0dJn//MXPfufM//p/2wgzpj7FK4oeebj/4lAHD/j8f84oOZYbAYMGAAA7y7i7xxujnEAAAAASUVORK5CYII="); }
+.zform-button-smilies { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAMAAABFjsb+AAAAY1BMVEX///8AAACodjqUlJTXl0vmolD/slj/tFr/tl3/uF//umH/vWX/wWn/xG3/x3D/y3T/znf/0Xz/1X//2YT/3Yn/4Y3/5JH/6pj/7Jr/7p3/9KP/9qX/+an/+6z//a7//7D///+Klzd9AAAAAXRSTlMAQObYZgAAAMFJREFUeNpVkLFOA0EQQ593Zzc1oNDy/9+VPoqERHTszZjiDiRcWa+ynzgiAB89TqKA/aQBIF0bVeUHBjqgyzW6hJn7yXR5CzUpDa0MHekaksScm01BwHsDbvVxqxdLsQgJgIKijBFSvEYXYg/u9nJlgEtN5Xzuxe5jX1HRKtdKu47NmbhUmZk2qOgw4D72zCpWZ367o9VrfkaVWYPxBIH6pDaAwdjSCFDvh6U+vtKnNykAjfmwf10i1Dhu/LH/nn8AyqVoMpYOcisAAAAASUVORK5CYII="); }
 
 
 /* Simple dropdown */
 div.zform-popup {
     top: 18px;
     z-index: 100;
-    background: transparent;    
+    background: transparent;
     background-color: #fff;
     background-image: linear-gradient(center bottom , #EBEBE5 8%, #F9F9F6 75%);
     border: 1px solid #CCCCCC;
@@ -151,7 +150,7 @@ div.zform-popup {
 
 /* Overlay gris clair */
 #zform-modal-overlay {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -168,23 +167,23 @@ div.zform-popup {
 <div id="zform-modal-wrapper">
     <div>
         <header id="zform-modal-header"></header>
-        
+
         <section class="zform-modal" id="zform-modal-link">
             <div>
                 <label for="zform-modal-link-href">Lien :</label>
                 <input type="text" id="zform-modal-link-href" />
             </div>
-            
+
             <div>
                 <label for="zform-modal-link-text">Texte :</label>
                 <input type="text" id="zform-modal-link-text" />
             </div>
         </section>
-        
+
         <section class="zform-modal" id="zform-modal-image">...</section>
         <section class="zform-modal" id="zform-modal-abbr">...</section>
         <section class="zform-modal" id="zform-modal-footnote">...</section>
-        
+
         <footer>
             <a id="zform-modal-validate">Valider</a>
             <a id="zform-modal-cancel">Annuler</a>
@@ -195,14 +194,14 @@ div.zform-popup {
 
 /* Modal box container */
 #zform-modal-wrapper {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     display: none;
     margin-top: 10%;
-    text-align: center; 
+    text-align: center;
     z-index: 100;
 
     & > div {
@@ -285,5 +284,16 @@ div.zform-popup {
         display: inline-block;
         width: 70px;
         text-align: left;
+    }
+}
+
+@media only screen and #{$media-mobile} {
+    .zform-toolbar {
+        a,
+        button {
+            &.zform-button-useless {
+                display: none;
+            }
+        }
     }
 }
