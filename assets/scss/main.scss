@@ -39,7 +39,9 @@
 6. Header
 ------------------------*/
 @import "layout/header";
+@import "layout/header-snow";
 @import "components/header-dropdown";
+@import "components/header-dropdown-snow";
 @import "components/header-search";
 @import "components/accessibility-bar";
 @import "components/cookies-banner";
@@ -51,6 +53,7 @@
 @import "layout/main";
 @import "layout/content";
 @import "layout/footer";
+@import "layout/footer-snow";
 
 /*------------------------
 8. Components
